@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SearchForm() {
  return (
-  <section className="">
+  <section className="pb-20">
    <form className="bg-white w-[40rem] mx-auto py-12 px-10 rounded-md">
     <label className="text-green-800 " htmlFor="search">
      Search Your Favorite Cocktail
