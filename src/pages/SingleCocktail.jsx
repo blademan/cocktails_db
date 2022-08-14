@@ -69,10 +69,12 @@ export default function SingleCocktail() {
      className="bg-green-800 hover:bg-green-600 duration-300 text-white px-6 py-2 rounded capitalize">
      back home
     </Link>
-    <h2 className="text-3xl text-center font-bold text-gray-700 py-16 tracking-widest">{name}</h2>
+    <h2 className="text-3xl text-center font-bold text-gray-700 py-6 md:py-16 tracking-widest">
+     {name}
+    </h2>
 
-    <div className="flex space-x-10 px-32 mx-auto items-center">
-     <div className="w-1/3">
+    <div className="flex flex-col md:flex-row md:space-x-10 px-6 md:px-32 md:mx-auto  md:items-center">
+     <div className="w-full pb-6 md:pb-0 md:w-1/3">
       <img src={image} alt="drink" />
      </div>
 

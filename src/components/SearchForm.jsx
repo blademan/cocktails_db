@@ -4,6 +4,11 @@ import { DebounceInput } from 'react-debounce-input';
 
 export default function SearchForm() {
  const { setSearchString } = useGlobalContext();
+ const inputRef = React.useRef('');
+
+ React.useEffect(() => {
+  inputRef.current.focus();
+ }, []);
 
  function searchCocktail(e) {
   setSearchString(e.target.value);
@@ -14,8 +19,10 @@ export default function SearchForm() {
 
  return (
   <section className="pb-20">
-   <form onSubmit={handleSubmit} className="bg-white w-[40rem] mx-auto py-12 px-10 rounded-md">
-    <label className="text-green-800 " htmlFor="search">
+   <form
+    onSubmit={handleSubmit}
+    className="bg-white md:w-[20rem] md:w-[40rem] mx-auto py-12 px-10 rounded-md">
+    <label ref={inputRef} className="text-green-800 " htmlFor="search">
      Search Your Favorite Cocktail
     </label>
     <DebounceInput

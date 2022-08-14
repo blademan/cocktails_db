@@ -21,7 +21,7 @@ export default function CocktailList() {
  return (
   <section className="px-12 ">
    <h1 className="text-3xl text-center font-bold text-gray-700 pb-12 tracking-widest">Cocktails</h1>
-   <div className="grid grid-cols-3 gap-x-10 gap-y-20">
+   <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-20">
     {cocktails.map((item) => (
      <Cocktail key={item.id} {...item} />
     ))}
