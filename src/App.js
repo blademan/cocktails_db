@@ -7,11 +7,18 @@ import About from './pages/About';
 import SingleCocktail from './pages/SingleCocktail';
 import Error from './pages/Error';
 import NavBar from './components/NavBar';
+import Loading from './components/loading/Loading';
 
 function App() {
- const value = useGlobalContext();
+ const { loading } = useGlobalContext();
 
- console.log(value);
+ if (loading) {
+  return (
+   <Router>
+    <NavBar /> <Loading />
+   </Router>
+  );
+ }
 
  return (
   <Router>
@@ -19,7 +26,7 @@ function App() {
    <Routes>
     <Route path="/" element={<Home />} />
     <Route path="about" element={<About />} />
-    <Route path="single-cocktail" element={<SingleCocktail />} />
+    <Route path="cocktail/:id" element={<SingleCocktail />} />
     <Route path="*" element={<Error />} />
    </Routes>
   </Router>
